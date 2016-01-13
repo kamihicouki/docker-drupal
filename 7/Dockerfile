@@ -3,6 +3,11 @@ FROM php:5.6-apache
 
 RUN a2enmod rewrite
 
+RUN \
+  curl -sL -O https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb \
+  && dpkg -i mod-pagespeed-*.deb \
+  && apt-get -f install
+  
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev git mysql-client vim \
 	&& rm -rf /var/lib/apt/lists/* \

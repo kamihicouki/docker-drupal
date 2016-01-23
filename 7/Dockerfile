@@ -27,6 +27,7 @@ RUN \
   && git checkout master \
   && ln -s /usr/local/src/drush/drush /usr/bin/drush \
   && composer install \
+  && echo "alias drush='sudo -u www-data drush'" >> /etc/profile \
   && drush --version
 
 WORKDIR /var/www/html

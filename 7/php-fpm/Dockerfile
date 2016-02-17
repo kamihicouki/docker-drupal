@@ -32,13 +32,11 @@ RUN \
 WORKDIR /var/www/html
 
 # https://www.drupal.org/node/3060/release
-ENV DRUPAL_VERSION 7.41
-ENV DRUPAL_MD5 7636e75e8be213455b4ac7911ce5801f
+ENV DRUPAL_VERSION 7.42
+ENV DRUPAL_MD5 9a96f67474e209dd48750ba6fccc77db
 
 RUN curl -fSL "http://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz \
 	&& echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c - \
 	&& tar -xz --strip-components=1 -f drupal.tar.gz \
 	&& rm drupal.tar.gz \
 	&& chown -R www-data:www-data sites
-
-VOLUME /var/www/html

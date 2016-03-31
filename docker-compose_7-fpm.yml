@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_DATABASE: "drupal"
+      MYSQL_ROOT_PASSWORD: "MYSQL_ROOT_PASSWORD"
+    networks:
+      - default
+    volumes:
+      - /var/lib/mysql
+  app:
+    image: drupal:7-fpm
+    export:
+      - "9000"
+    networks:
+      - default
+    volumes:
+      - /var/www/html
+  web:
+    image: nginx:latest
+    ports:
+      - "80"
+      - "443"
+    networks:
+      - default
+    volumes_from:
+      - app
+    volumes:
+      - "./default.conf:/etc/nginx/conf.d/default.conf"

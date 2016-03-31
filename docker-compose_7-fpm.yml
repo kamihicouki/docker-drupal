@@ -12,7 +12,7 @@ services:
       - /var/lib/mysql
   app:
     image: drupal:7-fpm
-    export:
+    expose:
       - "9000"
     networks:
       - default

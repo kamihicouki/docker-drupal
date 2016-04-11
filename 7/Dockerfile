@@ -7,7 +7,7 @@ RUN \
   curl -sL -O https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb \
   && dpkg -i mod-pagespeed-*.deb \
   && apt-get -f install
-  
+
 # install the PHP extensions we need
 RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev git mysql-client vim sudo \
 	&& rm -rf /var/lib/apt/lists/* \
@@ -37,13 +37,13 @@ RUN \
 WORKDIR /var/www/html
 
 # https://www.drupal.org/node/3060/release
-ENV DRUPAL_VERSION 7.41
-ENV DRUPAL_MD5 7636e75e8be213455b4ac7911ce5801f
+ENV DRUPAL_VERSION 7.43
+ENV DRUPAL_MD5 c6fb49bc88a6408a985afddac76b9f8b
 
 RUN curl -fSL "http://ftp.drupal.org/files/projects/drupal-${DRUPAL_VERSION}.tar.gz" -o drupal.tar.gz \
 	&& echo "${DRUPAL_MD5} *drupal.tar.gz" | md5sum -c - \
 	&& tar -xz --strip-components=1 -f drupal.tar.gz \
 	&& rm drupal.tar.gz \
 	&& chown -R www-data:www-data sites
-	
+  	
 VOLUME /var/www/html

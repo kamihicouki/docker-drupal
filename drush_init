@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+export DEBIAN_FRONTEND=noninteractive
+cd $HOME
+curl -sLO http://files.drush.org/drush.phar
+php drush.phar core-status
+chmod +x drush.phar
+mv drush.phar drush
+${HOME}/drush init

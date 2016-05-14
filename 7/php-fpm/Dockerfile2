@@ -1,0 +1,7 @@
+FROM drupal:7-fpm
+
+RUN \
+  php -r "readfile('http://files.drush.org/drush.phar');" > drush \
+  && chmod +x drush \
+  && mv drush /usr/local/bin \
+  && drush -y init 

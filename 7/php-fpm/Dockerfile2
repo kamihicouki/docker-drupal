@@ -9,3 +9,12 @@ RUN \
 RUN \
   apt update \
   && apt install --yes mysql-client
+
+RUN \
+  docker-php-ext-install \
+    gd \
+    mbstring \
+    ftp \
+    zip \
+    mysql \
+    opcache

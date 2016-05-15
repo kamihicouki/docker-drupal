@@ -5,3 +5,7 @@ RUN \
   && chmod +x drush \
   && mv drush /usr/local/bin \
   && drush -y init 
+
+RUN \
+  apt update \
+  && apt install --yes mysql-client

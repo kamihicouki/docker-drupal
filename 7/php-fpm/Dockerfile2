@@ -11,7 +11,7 @@ RUN \
   
 RUN \
   apt update \
-  && apt install --yes mysql-client
+  && apt install --yes mysql-client sudo
 
 RUN \
   docker-php-ext-install \

@@ -1,0 +1,39 @@
+---
+version: '2'
+
+services:
+  drupal.db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "drupal"
+    networks:
+      - default
+    expose:
+      - "3306"
+  drupal.app:
+    image: drupal:7-fpm
+    depends_on:
+      - "drupal.db"
+    networks:
+      - default
+    volumes:
+      - "app:/var/www/html"
+  drupal.web:
+    image: nginx:latest
+    depends_on:
+      - "drupal.app"
+    ports:
+      - "80"
+      - "443"
+    networks:
+      default:
+    volumes:
+      - "app:/var/www/html"
+      - "./drupal.conf:/etc/nginx/conf.d/default.conf:ro"
+
+volumes:
+  app:
+    driver: local
+  db:
+    driver: local

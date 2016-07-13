@@ -11,6 +11,8 @@ services:
       - default
     expose:
       - "3306"
+    volumes:
+      - "db:/var/lib/mysql"
   drupal.app:
     image: drupal:7-fpm
     depends_on:
@@ -25,7 +27,6 @@ services:
       - "drupal.app"
     ports:
       - "80"
-      - "443"
     networks:
       default:
     volumes:

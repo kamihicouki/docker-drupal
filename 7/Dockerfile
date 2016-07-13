@@ -1,5 +1,4 @@
-# from https://www.drupal.org/requirements/php#drupalversions
-FROM php:5.6-apache
+FROM drupal:7
 
 RUN a2enmod rewrite
 

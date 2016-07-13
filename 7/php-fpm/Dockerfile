@@ -20,4 +20,5 @@ RUN \
     ftp \
     zip \
     mysql \
+    mysqli \
     opcache

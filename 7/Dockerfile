@@ -1,9 +1,9 @@
 FROM drupal:7
 
 RUN \
-	apt-get update \
-	&& apt-get install -y libpng12-dev libjpeg-dev libpq-dev git mysql-client vim sudo \
-	&& a2enmod rewrite
+  apt-get update \
+  && apt-get install -y libpng12-dev libjpeg-dev libpq-dev git mysql-client vim sudo \
+  && a2enmod rewrite
 	
 RUN \
   curl -sL -O https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb \

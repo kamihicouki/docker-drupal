@@ -12,11 +12,4 @@ RUN \
   chown root:www-data /var/www/html \
   && chmod 2775 /var/www/html
 RUN \
-  docker-php-ext-install \
-    gd \
-    mbstring \
-    ftp \
-    zip \
-    mysql \
-    mysqli \
-    opcache
+  docker-php-ext-install gd mbstring ftp zip mysqli opcache

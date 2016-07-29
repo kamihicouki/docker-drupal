@@ -19,7 +19,7 @@ RUN \
   apt update \
   && apt install --yes mysql-client sudo php5-ssh2
 RUN \
-  chown root:www-data /var/www/html \
+  chown www-data:www-data /var/www/html \
   && chmod 2775 /var/www/html
 RUN \
   docker-php-ext-install \

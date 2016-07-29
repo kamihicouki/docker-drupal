@@ -22,8 +22,6 @@ RUN \
   chown www-data:www-data /var/www/html \
   && chmod 2775 /var/www/html
 RUN \
-  echo 'alias drush="sudo -u www-data drush"' >> ~/.bashrc
-RUN \
   docker-php-ext-install \
     gd \
     mbstring \

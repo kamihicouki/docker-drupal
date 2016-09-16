@@ -25,8 +25,4 @@ RUN \
   docker-php-ext-install \
     gd \
     mbstring \
-    ftp \
-    zip \
-    mysql \
-    mysqli \
     opcache

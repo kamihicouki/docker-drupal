@@ -14,6 +14,4 @@ RUN \
     mbstring \
     ftp \
     zip \
-    mysql \
-    mysqli \
     opcache

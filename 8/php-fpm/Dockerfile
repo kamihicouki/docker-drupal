@@ -4,7 +4,7 @@ RUN \
   php -r "readfile('http://files.drush.org/drush.phar');" > drush \
   && chmod +x drush \
   && mv drush /usr/local/bin \
-  && drush -y init
+  && drush init -y
 RUN \
   apt update \
   && apt install --yes mysql-client sudo php5-ssh2

@@ -9,6 +9,6 @@ RUN \
   apt update \
   && apt install --yes mysql-client sudo php5-ssh2
 RUN \
-  chown -R www-data:www-data /var/www/html
-RUN \
   docker-php-ext-install gd mbstring ftp zip mysqli opcache
+RUN \
+  chown -R www-data:www-data /var/www/html

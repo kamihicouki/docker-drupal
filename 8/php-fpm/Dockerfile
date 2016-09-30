@@ -7,7 +7,7 @@ RUN \
   && drush -y init
 RUN \
   apt update \
-  && apt install --yes mysql-client sudo php5-ssh2
+  && apt install --yes mysql-client sudo php5-ssh2 vim
 RUN \
   docker-php-ext-install gd mbstring ftp zip mysqli opcache
 RUN \

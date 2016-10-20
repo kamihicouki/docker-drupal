@@ -1,4 +1,4 @@
-FROM drupal:7
+FROM drupal:7.44
 
 RUN \
   apt-get update \

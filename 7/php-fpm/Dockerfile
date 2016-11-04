@@ -6,6 +6,10 @@ RUN \
   && mv drush /usr/local/bin \
   && drush -y init
 RUN \
+  touch /var/www/html/sites/default/drushrc.php \
+  && curl -sL https://raw.githubusercontent.com/drush-ops/drush/master/examples/example.drushrc.php > /var/www/html/sites/default/drushrc.php \
+  && echo "ini_set('memory_limit', '512M');" >> /var/www/html/sites/default/drushrc.php
+RUN \
   apt update \
   && apt install --yes mysql-client sudo php5-ssh2 vim
 RUN \

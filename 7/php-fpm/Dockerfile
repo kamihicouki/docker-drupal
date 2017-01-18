@@ -1,4 +1,4 @@
-FROM drupal:7-fpm
+FROM drupal:7.44-fpm
 
 RUN \
   php -r "readfile('http://files.drush.org/drush.phar');" > drush \

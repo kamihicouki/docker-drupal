@@ -3,4 +3,5 @@ DIR=/var/www/html/sites/all/libraries/hybridauth
 mkdir -p ${DIR}
 curl -sL https://github.com/hybridauth/hybridauth/archive/master.tar.gz | tar xz -C ${DIR} --strip=1
 drush en hybridauth -y
- 
+drush dl realname -y
+drush en realname -y

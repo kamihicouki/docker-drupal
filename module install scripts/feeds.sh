@@ -10,3 +10,8 @@ drush en feeds_csv_preview_before_import -y
 
 drush dl media_feeds -y
 drush en media_feeds -y
+
+# drush dl feeds_files -y
+# drush en feeds_file -y
+
+drush dl entityreference_feeds -y

@@ -6,5 +6,4 @@
 # Notice: Trying to get property of non-object formblock_get_block() (/var/www/html/sites/all/modules/formblock/formblock.module ファイル　145行).
 
 drush dl formblock -y
-
 drush en formblock -y

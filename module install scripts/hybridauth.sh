@@ -1,4 +1,5 @@
 drush dl hybridauth-7.x-2.x-dev ctools -y
+# drush dl hybridauth ctools -y
 DIR=/var/www/html/sites/all/libraries/hybridauth
 rm -r ${DIR}
 mkdir -p ${DIR}
